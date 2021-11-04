@@ -1,10 +1,10 @@
 <head>
 	<style> 
-				details {
+						details {
 			  user-select: none;
 			}
 
-			details>summary span.icon {
+			details > summary span.icon {
 			  width: 24px;
 			  height: 24px;
 			  transition: all 0.3s;
@@ -33,23 +33,36 @@
 			    border: 0px solid;
 			}
 
-
 			.flex-child:first-child {
 			    margin-right: 20px;
 			}
 
-
 			.r {
 			  position: relative;
 			  float: right;
-			}	
+			}
 
 	</style>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- HTML STUFF ======================================================================================= -->
+  <head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  </head>
 
 
 <form name="costcalculator">
@@ -68,19 +81,8 @@
   <input type="range" min="0" max="4" value="1" class="slider" step="1" id="EventLengthSlider">
 </div>
 
-</fieldset> 
-
-
-
-
-<!-- NUMERICAL INPUTS -->
-
-<!-- Inputs for Numerical Inputs --> 
-<div><p></p></div>
-<fieldset>
-         
 <div class="numericalinput">
-  <label for="Events">Number of Events:</label>
+  <label for="Events">Frequency:</label>
   <input type="number" id="Events" name="Events" value="2"
          min="1" max="100">
          
@@ -91,75 +93,105 @@
   </select>
 </div>
 
-<div class="numericalinput">
-  <label for="TicketPrice">Ticket Price ($USD): </label>
-  <input type="number" id="TicketPrice" name="TicketPrice" value="10"
-         min="0">
-</div>
+ <div class="numericalinput">     
+          <label for="Organisers">Number of Organisers/Staff:</label>
+          <input type="number" id="Organisers" name="Organisers" value="2"
+                 min="1" max="100">
+        </div>
+        
+</fieldset> 
 
-<div class="numericalinput">     
-  <label for="Organisers">Number of Organisers/Staff:</label>
-  <input type="number" id="Organisers" name="Organisers" value="2"
-         min="1" max="100">
-</div>
 
-<div class="numericalinput">     
-  <label for="Speakers">Number of Speakers:</label>
-  <input type="number" id="Speakers" name="Speakers" value="2"
-         min="0" max="100">
-</div>
 
-<div class="numericalinput">         
-  <label for="Sponsors">Number of Sponsors:</label>
-  <input type="number" id="Sponsors" name="Sponsors" value="0"
-         min="0" max="100">
-</div>
+
+<!-- COLLAPSIBLE SECTION -->
+
+<!-- Inputs for Numerical Inputs --> 
+<div><p></p></div>
+<fieldset>
+         
+<details>
+  <summary>
+    More Options 
+    <span class="icon">👇</span>
+  </summary>
   
-<div class="numericalinput">        
-  <label for="Exhibitors">Number of Exhibitors/Booths:</label>
-  <input type="number" id="Exhibitors" name="Exhibitors" value="0"
-         min="0" max="100">
-</div>
-</fieldset>
+<div class = "flex-container">
 
+
+    <div class = "flex-child">
+
+
+        <div class="numericalinput">
+          <label for="TicketPrice">Ticket Price($): </label>
+          <input type="number" id="TicketPrice" name="TicketPrice" value="10"
+                 min="0">
+        </div>
+
+       
+
+        <div class="numericalinput">     
+          <label for="Speakers">Speakers:</label>
+          <input type="number" id="Speakers" name="Speakers" value="2"
+                 min="0" max="100">
+        </div>
+
+        <div class="numericalinput">         
+          <label for="Sponsors">Sponsors:</label>
+          <input type="number" id="Sponsors" name="Sponsors" value="0"
+                 min="0" max="100">
+        </div>
+
+        <div class="numericalinput">        
+          <label for="Exhibitors">Exhibitors/Booths:</label>
+          <input type="number" id="Exhibitors" name="Exhibitors" value="0"
+                 min="0" max="100">
+        </div>
+
+    </div>
 
 
 <!-- TOGGLES -->
-<div><p></p></div>
 
-<fieldset>
-  <legend>Choose Features to Include   </legend>
-  
-  <div>
-    <input type="checkbox" id="Rooms" name="Rooms">
-    <label for="Rooms">Networking Rooms</label>
-  </div>
-  
-  <div>
-    <input type="checkbox" id="Meetings" name="Meetings" >
-    <label for="Meetings">1 to 1 Meetings</label>
-  </div>
-  
-    <div>
-        <input type="checkbox" id="Replay" name="Replay" >
-        <label for="Replay">Replay Recordings in Event</label>
-    </div>
-    
-      <div>
-        <input type="checkbox" id="HDRecord" name="HDRecord" >
-        <label for="Replay">HD Recordings</label>
-    </div>
-    
-    <div>
-        <input type="checkbox" id="Contacts" name="Contacts" >
-        <label for="Contacts">Add Users as Contacts</label>
-    </div>
-    
-    <div>
-        <input type="checkbox" id="Multitrack" name="Multitrack" >
-        <label for="Contacts">Multiple Talks/Stages at Once</label>
-    </div>
-  
+      <div class = "flex-child">
+
+
+            <legend>Choose Features to Include   </legend>
+
+            <div>
+              <input type="checkbox" id="Rooms" name="Rooms">
+              <label for="Rooms">Networking Rooms</label>
+            </div>
+
+            <div>
+              <input type="checkbox" id="Meetings" name="Meetings" >
+              <label for="Meetings">1 to 1 Meetings</label>
+            </div>
+
+              <div>
+                  <input type="checkbox" id="Replay" name="Replay" >
+                  <label for="Replay">Replay Recordings in Event</label>
+              </div>
+
+                <div>
+                  <input type="checkbox" id="HDRecord" name="HDRecord" >
+                  <label for="Replay">HD Recordings</label>
+              </div>
+
+              <div>
+                  <input type="checkbox" id="Contacts" name="Contacts" >
+                  <label for="Contacts">Add Users as Contacts</label>
+              </div>
+
+              <div>
+                  <input type="checkbox" id="Multitrack" name="Multitrack" >
+                  <label for="Contacts">Multiple Talks/Stages at Once</label>
+              </div>
+
+     </div>
+</div>
+
+</details>
 </fieldset>
 
 <!-- CALCULATE BUTTON! --> 
@@ -196,10 +228,29 @@
 
 
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script type = "text/javascript"> 
   
-////////////////////////////////////// COLLECTION OF DATA 
+ ////////////////////////////////////// COLLECTION OF DATA 
 ////////////////////////////////////// FROM THE HTML 
 ////////////////////////////////////// HIGHLY BORING 
 //////// INIT DEFAULT VALUES 
@@ -1117,5 +1168,8 @@ function calculatePrice()
   
   return array2;
 }
+
+
+
 
 </script> 
