@@ -1,6 +1,55 @@
-<link rel=¨stylesheet¨ type=¨text/css¨ href=¨calc.css¨>
+<head>
+	<style> 
+				details {
+			  user-select: none;
+			}
+
+			details>summary span.icon {
+			  width: 24px;
+			  height: 24px;
+			  transition: all 0.3s;
+			  margin-left: auto;
+			}
+
+			details[open] summary span.icon {
+			  transform: rotate(180deg);
+			}
+
+			summary {
+			  display: flex;
+			  cursor: pointer;
+			}
+
+			summary::-webkit-details-marker {
+			  display: none;
+			}
+
+			.flex-container {
+			    display: flex;
+			}
+
+			.flex-child {
+			    flex: 1;
+			    border: 0px solid;
+			}
 
 
+			.flex-child:first-child {
+			    margin-right: 20px;
+			}
+
+
+			.r {
+			  position: relative;
+			  float: right;
+			}	
+
+	</style>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+
+<!-- HTML STUFF ======================================================================================= -->
 
 
 <form name="costcalculator">
@@ -145,13 +194,14 @@
 
 
 
+
+
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type = "text/javascript"> 
   
- ////////////////////////////////////// COLLECTION OF DATA 
+////////////////////////////////////// COLLECTION OF DATA 
 ////////////////////////////////////// FROM THE HTML 
-
-
+////////////////////////////////////// HIGHLY BORING 
 //////// INIT DEFAULT VALUES 
 
 				var Events = 2;
@@ -1068,28 +1118,4 @@ function calculatePrice()
   return array2;
 }
 
-
-//////// Old code to display price as string 
-  
-      /*
-    // Add a string for each platform, to the output.
-  	PriceOutput += 
-    FilteredPackages[index].Name + " " 
-    + FilteredPackages[index].Plan + " : $" 
-    + "<b>" + FilteredPackages[index].Price + "</b>"
-    + ` (+${percentChange}%)` ;
-    
-		//Special Exception for Remo
-    if (FilteredPackages[index].Plan == "Essentials") {PriceOutput += " annual only";}
-    
-    // Add Break 
-    PriceOutput += "<br>";
-    */
-	//document.getElementById('1').innerHTML = "Tevent's Price:  $<b>" + teventPrice + "</b>";
-  //document.getElementById('price').innerHTML = PriceOutput;
-
-
-</script>
-  
-  
-  
+</script> 
